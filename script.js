@@ -11,12 +11,15 @@ function modifyString() {
         return;
     }
 
-    // 將星號隨機插入字串
+    // 定義用來插入的字母陣列
+    const letters = ['z', 'Z'];
+    
+    // 將隨機字母插入字串
     let resultString = inputString;
     for (let i = 0; i < inputNumber; i++) {
         const randomIndex = Math.floor(Math.random() * (resultString.length + 1));
-        const letter = Math.floor(Math.random()*1000)%2==0?'z':'Z';
-        resultString = resultString.slice(0, randomIndex) + letter + resultString.slice(randomIndex);
+        const randomLetter = letters[Math.floor(Math.random() * letters.length)];
+        resultString = resultString.slice(0, randomIndex) + randomLetter + resultString.slice(randomIndex);
     }
     
     // 將結果顯示在第三個輸入框中
