@@ -11,8 +11,12 @@ function modifyString() {
         return;
     }
 
-    // 生成結果字串
-    const resultString = inputString + '*'.repeat(inputNumber);
+    // 將星號隨機插入字串
+    let resultString = inputString;
+    for (let i = 0; i < inputNumber; i++) {
+        const randomIndex = Math.floor(Math.random() * (resultString.length + 1));
+        resultString = resultString.slice(0, randomIndex) + '*' + resultString.slice(randomIndex);
+    }
     
     // 將結果顯示在第三個輸入框中
     document.getElementById('outputString').value = resultString;
