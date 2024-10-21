@@ -1,13 +1,19 @@
 // script.js
 
-// 當網頁加載完成後執行的函數
-document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('網頁已加載完成');
+function modifyString() {
+    // 獲取輸入框中的值
+    const inputString = document.getElementById('inputString').value;
+    const inputNumber = parseInt(document.getElementById('inputNumber').value, 10);
+    
+    // 檢查輸入是否有效
+    if (isNaN(inputNumber) || inputNumber < 0) {
+        alert('請輸入有效的數字');
+        return;
+    }
 
-    // 修改 HTML 元素的內容
-    const heading = document.querySelector('h1');
-    heading.textContent = 'Hello, JavaScript!';
-
-    // 顯示一個提示訊息
-    alert('JavaScript 已加載並執行');
-});
+    // 生成結果字串
+    const resultString = inputString + '*'.repeat(inputNumber);
+    
+    // 將結果顯示在第三個輸入框中
+    document.getElementById('outputString').value = resultString;
+}
