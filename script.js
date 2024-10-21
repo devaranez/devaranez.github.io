@@ -15,7 +15,8 @@ function modifyString() {
     let resultString = inputString;
     for (let i = 0; i < inputNumber; i++) {
         const randomIndex = Math.floor(Math.random() * (resultString.length + 1));
-        resultString = resultString.slice(0, randomIndex) + '*' + resultString.slice(randomIndex);
+        const letter = Math.floor(Math.random()*1000)%2==0?'z':'Z';
+        resultString = resultString.slice(0, randomIndex) + letter + resultString.slice(randomIndex);
     }
     
     // 將結果顯示在第三個輸入框中
