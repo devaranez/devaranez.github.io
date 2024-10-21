@@ -17,7 +17,7 @@ function modifyString() {
     // 將隨機字母插入字串
     let resultString = inputString;
     for (let i = 0; i < inputNumber; i++) {
-        const randomIndex = Math.floor(Math.random() * (resultString.length + 1));
+        const randomIndex = Math.floor(Math.random() * (resultString.length + 2));
         const randomLetter = letters[Math.floor(Math.random() * letters.length)];
         resultString = resultString.slice(0, randomIndex) + randomLetter + resultString.slice(randomIndex);
     }
