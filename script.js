@@ -19,7 +19,11 @@ function modifyString() {
     for (let i = 0; i < inputNumber; i++) {
         const randomIndex = Math.floor(Math.random() * (resultString.length + 2));
         const randomLetter = letters[Math.floor(Math.random() * letters.length)];
-        resultString = resultString.slice(0, randomIndex) + randomLetter + resultString.slice(randomIndex);
+
+        if (inputNumber==1)
+            resultString = resultString + randomLetter
+        else
+            resultString = resultString.slice(0, randomIndex) + randomLetter + resultString.slice(randomIndex);
     }
     
     // 將結果顯示在第三個輸入框中
