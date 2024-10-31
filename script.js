@@ -29,3 +29,17 @@ function modifyString() {
     // 將結果顯示在第三個輸入框中
     document.getElementById('outputString').value = resultString;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("inputString").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      document.querySelector("button").click();
+    }
+  });
+
+  document.getElementById("inputNumber").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      document.querySelector("button").click();
+    }
+  });
+});
